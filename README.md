@@ -9,7 +9,7 @@ Mockup แบบ Interactive สำหรับ “กิจกรรมที�
 ### เปิดผ่าน Static HTTP Server (แนะนำ)
 
 ```bash
-cd /Users/thanthita.korn/Desktop/activity9-html
+cd /Users/dyingdogg/Desktop/activity9-html
 python3 -m http.server 4173
 ```
 
