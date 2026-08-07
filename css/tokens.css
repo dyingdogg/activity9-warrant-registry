@@ -1,0 +1,49 @@
+:root {
+  color-scheme: light;
+  --navy-deep: #0d1b3e;
+  --navy: #1a2f6b;
+  --navy-mid: #2a4a8f;
+  --primary: #0b4e88;
+  --primary-hover: #083e6e;
+  --gold: #c99a2e;
+  --gold-soft: #fff8e8;
+  --page-bg: #f4f6f9;
+  --surface: #fefefe;
+  --surface-muted: #f7f9fb;
+  --surface-selected: #eef5fb;
+  --text: #22354a;
+  --text-strong: #0b2748;
+  --muted: #657488;
+  --border: #dce3ea;
+  --border-strong: #bdc9d5;
+  --success: #21623b;
+  --success-bg: #edf8f0;
+  --warning: #805617;
+  --warning-bg: #fff7e8;
+  --danger: #9f2d28;
+  --danger-bg: #fff3f2;
+  --info: #315f87;
+  --info-bg: #eef5fb;
+  --focus: rgba(11, 78, 136, .28);
+  --shadow-sm: 0 1px 3px rgba(13, 27, 62, .08);
+  --shadow-md: 0 12px 32px rgba(13, 27, 62, .18);
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-lg: 10px;
+  --sidebar-width: 260px;
+  --topbar-height: 64px;
+  --content-max: 1540px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --font-ui: "Sarabun", "Noto Sans Thai", Tahoma, system-ui, sans-serif;
+  --transition: 180ms cubic-bezier(.22, 1, .36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
