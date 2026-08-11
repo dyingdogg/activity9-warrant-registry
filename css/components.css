@@ -173,6 +173,7 @@ a:hover { color: var(--primary-hover); }
 
 .toast-region { position: fixed; z-index: 2600; right: 18px; bottom: 20px; display: grid; width: min(390px, calc(100vw - 28px)); gap: 8px; }
 .toast { padding: 11px 13px; border: 1px solid #a8d2b4; border-radius: 8px; background: #f3fbf5; color: var(--success); box-shadow: var(--shadow-md); font-size: 11px; }
+.toast.info { border-color: #b7c8de; background: #f0f4fa; color: var(--primary); }
 .toast strong { display: block; margin-bottom: 2px; }
 .toast.error { border-color: #e1aaa6; background: var(--danger-bg); color: var(--danger); }
 
@@ -215,4 +216,13 @@ a:hover { color: var(--primary-hover); }
   body.printing-document .app-shell > * { display: none !important; }
   body.printing-document #print-root { display: block !important; }
   .document-paper { width: 100%; min-height: 0; border: 0; box-shadow: none; }
+}
+
+[data-outcome-group] button.is-selected {
+  outline: 3px solid var(--primary, #2563eb);
+  outline-offset: 1px;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+[data-outcome-group] button.is-selected::after {
+  content: " ✓";
 }
