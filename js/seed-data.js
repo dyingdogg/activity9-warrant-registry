@@ -16,7 +16,7 @@
     CaseOwner: ['view', 'create', 'submitReadiness', 'correctRequest', 'submitCourt', 'recordCourtResult', 'correctReview', 'recordEnforcement', 'manageHandover', 'reviewTermination', 'confirmCourtEffect', 'respondExecutiveOrder'],
     PaccSupervisor: ['view', 'reviewReadiness', 'verifyEnforcement', 'reviewTermination', 'screenTerminationSupervisor', 'submitActivity7', 'respondExecutiveOrder'],
     AgencyCaseAdministrator: ['view', 'agencyRegister', 'agencyForward', 'correctReview', 'agencyAcknowledge', 'submitWithdrawal', 'respondExecutiveOrder'],
-    GotOfficer: ['view', 'gotReceive', 'prepareDispatch', 'recordEnforcement', 'prepareTerminationNotice', 'manageDay180', 'viewOpsDashboard', 'respondExecutiveOrder'],
+    GotOfficer: ['view', 'gotReceive', 'prepareDispatch', 'recordEnforcement', 'prepareTerminationNotice', 'reviewTermination', 'manageDay180', 'viewOpsDashboard', 'respondExecutiveOrder'],
     GotReviewer: ['view', 'reviewWarrant', 'verifyEnforcement', 'reviewTermination', 'submitActivity7', 'viewOpsDashboard', 'respondExecutiveOrder'],
     AgencyDirector: ['view', 'agencyAcknowledge', 'submitWithdrawal', 'screenTerminationDirector', 'respondExecutiveOrder'],
     Executive: ['view', 'viewExecutiveDashboard', 'manageExecutiveOrders'],
@@ -45,7 +45,7 @@
     orderStatus: { Open: 'เปิดงาน', Acknowledged: 'รับทราบแล้ว', InProgress: 'กำลังดำเนินการ', Escalated: 'ทวงถาม/ยกระดับ', Closed: 'ปิดงานแล้ว' },
     handover: { NotRequired: 'ไม่ต้องส่ง', AwaitingProsecutorCoordination: 'รอประสานอัยการ', AppointmentScheduled: 'นัดหมายแล้ว', ProsecutorRequestedDocuments: 'อัยการขอเอกสารเพิ่ม', Completed: 'ส่งตัวสำเร็จ', UnableToComplete: 'ดำเนินการไม่สำเร็จ' },
     termination: {
-      NoReason: 'ยังไม่มีเหตุ', ReviewingReasonAndEvidence: 'ตรวจเหตุและหลักฐาน', AwaitingAdditionalInformation: 'รอข้อมูลเพิ่ม', AwaitingSupervisorScreening: 'รอผู้บังคับบัญชาชั้นต้นกลั่นกรอง', SupervisorRejected: 'ผู้บังคับบัญชาชั้นต้นไม่เห็นชอบ', AwaitingDirectorScreening: 'รอ ผอ.สำนัก/กองพิจารณา', DirectorRejected: 'ผอ.สำนัก/กองไม่เห็นชอบ', ReadyForSubmission: 'พร้อมเสนอ',
+      NoReason: 'ยังไม่มีเหตุ', ReviewingReasonAndEvidence: 'ตรวจเหตุและหลักฐาน', AwaitingAdditionalInformation: 'รอข้อมูลเพิ่ม', ReturnedForCorrection: 'ส่งกลับแก้ไขข้อมูลยุติ/ถอนหมาย', AwaitingSupervisorScreening: 'รอผู้บังคับบัญชาชั้นต้นกลั่นกรอง', SupervisorRejected: 'ผู้บังคับบัญชาชั้นต้นไม่เห็นชอบ', AwaitingDirectorScreening: 'รอ ผอ.สำนัก/กองพิจารณา', DirectorRejected: 'ผอ.สำนัก/กองไม่เห็นชอบ', ReadyForSubmission: 'พร้อมเสนอ',
       SentToActivity7: 'ส่งกิจกรรมที่ 7', Activity7RequestedInformation: 'กิจกรรมที่ 7 ขอข้อมูลเพิ่ม', InternallyRejected: 'ไม่อนุมัติภายใน', InternallyApproved: 'อนุมัติภายใน',
       PoliceAndAgencyNotified: 'แจ้งตำรวจและสำนัก/กอง', AwaitingCourtReport: 'รอรายงานศาล', WithdrawalSubmittedToCourt: 'ยื่นถอนต่อศาล', CourtRequestedDocuments: 'ศาลขอเอกสาร',
       AwaitingWithdrawalOrder: 'รอคำสั่งถอน', WithdrawnByCourt: 'ศาลถอนหมายแล้ว'
@@ -259,7 +259,7 @@
   };
 
   window.Activity9Seed = {
-    schemaVersion: 7,
+    schemaVersion: 8,
     now,
     labels,
     roles,
@@ -269,7 +269,7 @@
     dashboardScope,
     scenarios,
     create() {
-      return JSON.parse(JSON.stringify({ schemaVersion: 7, clock: now, currentRole: 'CaseOwner', records, sourceCases, reports, notifications: [], executiveOrders: [], createDraft: { step: 1, sourceMode: 'Activity5', sourceCaseId: sourceCases[1].id }, ui: { selectedReport: 'Registry', presenterScenario: 'A', presenterStep: 0 } }));
+      return JSON.parse(JSON.stringify({ schemaVersion: 8, clock: now, currentRole: 'CaseOwner', records, sourceCases, reports, notifications: [], executiveOrders: [], createDraft: { step: 1, sourceMode: 'Activity5', sourceCaseId: sourceCases[1].id }, ui: { selectedReport: 'Registry', presenterScenario: 'A', presenterStep: 0 } }));
     }
   };
 }());
